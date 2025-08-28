@@ -26,4 +26,5 @@ app.post("/api/fileanalyse", upload.single("upfile"), function (req, res) {
   // req.file is the name of your file in the form above, here 'upfile'
   // req.body will hold the text fields, if there were any
   console.log(req.file, req.body);
+  res.json({name: req.file.filename, type: req.file.mimetype, size: req.file.size})
 });
